@@ -3,9 +3,7 @@ const { TodoModel } = require("./todo.model");
 const mongoose = require("mongoose");
 async function createTodo() {
   try {
-    await mongoose.connect(
-      "mongodb+srv://weeraphatmain:5N4vxdDFRTSllkGp@cluster0.stiqlni.mongodb.net/todoFuture"
-    );
+    await mongoose.connect(process.env.MONGODB_URI);
     const todo = new TodoModel({
       name: "Learn MongoDB",
       status: "pending",
