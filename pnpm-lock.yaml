@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  dotenv:
+    specifier: ^17.2.0
+    version: 17.2.0
   mongoose:
     specifier: ^8.16.4
     version: 8.16.4
@@ -42,6 +45,11 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.3
+    dev: false
+
+  /dotenv@17.2.0:
+    resolution: {integrity: sha512-Q4sgBT60gzd0BB0lSyYD3xM4YxrXA9y4uBDof1JNYGzOXrQdQ6yX+7XIAqoFOGQFOTK1D3Hts5OllpxMDZFONQ==}
+    engines: {node: '>=12'}
     dev: false
 
   /kareem@2.6.3:

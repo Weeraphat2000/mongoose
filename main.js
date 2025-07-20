@@ -1,13 +1,17 @@
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 const { TodoModel } = require("./src/models/todo.model");
 
+dotenv.config();
 async function createTodo() {
   try {
-    await mongoose.connect(
-      "mongodb+srv://weeraphatmain:5N4vxdDFRTSllkGp@cluster0.stiqlni.mongodb.net/todoFuture"
-    );
+    console.log("env", dotenv.config().parsed);
+    const env = dotenv.config().parsed;
+    console.log("MONGODB_URI", process.env.MONGODB_URI);
+
+    await mongoose.connect(env.MONGODB_URI);
     const todo = new TodoModel({
-      name: "Learn MongoDB",
+      name: "Learn MongoDB22222",
       status: "pending",
     });
 
